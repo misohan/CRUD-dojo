@@ -12,11 +12,36 @@ import java.io.IOException;
 
 public class Servlet extends HttpServlet {
 
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
-        view.forward(request, response);
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String action = request.getServletPath();
+
+        try {
+            switch (action) {
+                case "/new":
+                    showNewForm(request, response);
+                    break;
+                case "/insert":
+                    insertStudent(request, response);
+                    break;
+                case "/delete":
+                    deleteStudent(request, response);
+                    break;
+                case "/edit":
+                    showEditForm(request, response);
+                    break;
+                case "/update":
+                    updateStudent(request, response);
+                    break;
+                default:
+                    listStudents(request, response);
+                    break;
+            }
+        } catch (ServletException ex) {
+            throw new ServletException(ex);
+        }
     }
 
 
