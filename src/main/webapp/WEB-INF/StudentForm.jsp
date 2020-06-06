@@ -1,14 +1,14 @@
 <html>
 <head>
-    <title>Books Store Application</title>
+    <title>Student CRUD</title>
 </head>
 <body>
     <center>
-        <h1>Books Management</h1>
+        <h1>Add Student</h1>
         <h2>
-            <a href="/add">Add New Book</a>
+            <a href="/add">Add New Student</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="/list">List All Books</a>
+            <a href="/students">List All Students</a>
 
         </h2>
     </center>
@@ -21,14 +21,7 @@
         </c:if>
         <table border="1" cellpadding="5">
             <caption>
-                <h2>
-                    <c:if test="${student != null}">
-                        Edit Book
-                    </c:if>
-                    <c:if test="${student == null}">
-                        Add New Book
-                    </c:if>
-                </h2>
+
             </caption>
                 <c:if test="${book != null}">
                     <input type="hidden" name="id" value="<c:out value='${book.id}' />" />
