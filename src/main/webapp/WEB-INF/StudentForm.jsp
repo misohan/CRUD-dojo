@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Student CRUD</title>
@@ -23,8 +26,8 @@
             <caption>
 
             </caption>
-                <c:if test="${book != null}">
-                    <input type="hidden" name="id" value="<c:out value='${book.id}' />" />
+                <c:if test="${student != null}">
+                    <input type="hidden" name="id" value="<c:out value='${student.id}' />" />
                 </c:if>
             <tr>
                 <th>Title: </th>
@@ -38,7 +41,7 @@
                 <th>Author: </th>
                 <td>
                     <input type="text" name="lastName" size="45"
-                            value="<c:out value='${student.author}' />"
+                            value="<c:out value='${student.lastName}' />"
                     />
                 </td>
             </tr>

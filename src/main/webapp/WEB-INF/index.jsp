@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +10,11 @@
 </head>
 <body>
     <center>
-            <h1>Student CRUD</h1>
+            <h1>Students CRUD</h1>
             <h2>
                 <a href="/add">Add student</a>
                 &nbsp;&nbsp;&nbsp;
-                <a href="/students">List All Books</a>
+                <a href="/students">List All students</a>
 
             </h2>
         </center>
@@ -25,7 +28,7 @@
                     <th>Age</th>
                     <th>Action</th>
                 </tr>
-                <c:forEach var="student" items="${studentlist}">
+                <c:forEach var="student" items="${listStudents}">
                     <tr>
                         <td><c:out value="${student.id}" /></td>
                         <td><c:out value="${student.firstName}" /></td>
